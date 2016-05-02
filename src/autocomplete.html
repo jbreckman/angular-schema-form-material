@@ -9,13 +9,13 @@
     schema-validate="form"
     md-selected-item="$$value$$"
     md-search-text="searchText"
-    md-selected-item-change="'todo';"
-    md-items="item in evalExpr('this[\''+form.optionFilter+'\'](\''+searchText+'\')')"
-    md-item-text="item.name"
+    md-selected-item-change=""
+    md-items="item in evalExpr(form.onChange+'(\''+searchText+'\')')"
+    md-item-text="item"
     md-floating-label="{{::form.title}}"
     md-menu-class="autocomplete-custom-template">
     <md-item-template>
-      <span md-highlight-text="searchText">{{item.name}}</span>
+      <span md-highlight-text="searchText">{{item}}</span>
     </md-item-template>
     <md-not-found>
       No matches found
