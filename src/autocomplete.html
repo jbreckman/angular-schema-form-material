@@ -11,7 +11,7 @@
     md-search-text="searchText"
     md-selected-item-change="evalExpr(form.onClick(item))"
     md-items="item in evalExpr(form.onChange+'(\''+searchText+'\')')"
-    md-item-text="item"
+    md-item-text="item[form.display]"
     md-floating-label="{{::form.title}}"
     md-menu-class="autocomplete-custom-template">
     <md-item-template>
