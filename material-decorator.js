@@ -128,10 +128,8 @@ $templateCache.put("decorators/material/textarea.html","<md-input-container clas
 
       if (mdAutocompleteFrag) {
         if (args.form.onChange) {
-          mdAutocompleteFrag.setAttribute('md-selected-item-change', 'args.form.onChange()');
-          mdAutocompleteFrag.setAttribute('md-search-text-change', 'args.form.onChange(searchText)');
-        };
-
+          mdAutocompleteFrag.setAttribute('md-selected-item-change', "evalExpr(form.onChange+'(\"'+item+'\")')");
+        }
         // mdAutocompleteFrag.setAttribute('md-items', 'item in $filter(''autocomplete'')(searchText);');
         mdAutocompleteFrag.setAttribute('md-min-length', minLength);
         if (maxLength) {
