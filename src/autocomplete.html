@@ -2,20 +2,24 @@
      ng-class="{'has-error': hasError(), 'has-success': hasSuccess(), 'has-feedback': form.feedback !== false}"
      sf-messages sf-layout>
   <md-autocomplete flex
-    ng-disabled="form.readonly"
-    ng-required="true"
+    ng-disabled="::form.readonly"
     ng-model="$$value$$"
+    ng-class="::form.fieldHtmlClass"
     sf-autocomplete
+    sf-changed="form"
     sf-field-model="replaceAll"
     schema-validate="form"
     md-selected-item="$$value$$"
     md-search-text="searchText"
     md-search-text-change="$$value$$ = searchText"
+    md-input-name="{{::form.key|sfCamelKey}}"
     md-selected-item-change="evalExpr(form.onClick(item))"
     md-items="item in evalExpr(form.optionFilter+'(\''+searchText+'\')')"
     md-item-text="item[form.display]"
     md-floating-label="{{::form.title}}"
-    md-menu-class="autocomplete-custom-template">
+    md-menu-class="autocomplete-custom-template"
+    aria-describedby="{{::form.key|sfCamelKey}}Status"
+   >
     <md-item-template>
       <span md-highlight-text="searchText">{{item}}</span>
     </md-item-template>
