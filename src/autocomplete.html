@@ -9,7 +9,7 @@
     schema-validate="form"
     md-selected-item="$$value$$"
     md-search-text="searchText"
-    md-selected-item-change=""
+    md-selected-item-change="evalExpr(form.onClick(item))"
     md-items="item in evalExpr(form.onChange+'(\''+searchText+'\')')"
     md-item-text="item"
     md-floating-label="{{::form.title}}"
