@@ -10,6 +10,7 @@
     schema-validate="form"
     md-selected-item="$$value$$"
     md-search-text="searchText"
+    md-search-text-change="$$value$$ = searchText"
     md-selected-item-change="evalExpr(form.onClick(item))"
     md-items="item in evalExpr(form.optionFilter+'(\''+searchText+'\')')"
     md-item-text="item[form.display]"
