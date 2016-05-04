@@ -10,7 +10,6 @@
     schema-validate="form"
     md-selected-item="$$value$$"
     md-search-text="searchText"
-    md-selected-item-change="this.$eval(tyepof(form.onChange)==='function')&&this.$eval(form.onChange(item))"
     md-items="item in evalExpr(form.optionFilter+'(\''+searchText+'\')')"
     md-item-text="item[form.display]"
     md-floating-label="{{::form.title}}"

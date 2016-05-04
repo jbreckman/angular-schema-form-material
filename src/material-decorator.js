@@ -102,6 +102,9 @@
       var title = args.form.title || args.form.placeholder || args.form.key.slice(-1)[0];
 
       if (mdAutocompleteFrag) {
+        if (args.form.onChange) {
+          mdAutocompleteFrag.setAttribute('md-selected-item-change', "evalExpr(form.onChange+'(\"'+item+'\")')");
+        }
         // mdAutocompleteFrag.setAttribute('md-items', 'item in $filter(''autocomplete'')(searchText);');
         mdAutocompleteFrag.setAttribute('md-min-length', minLength);
         if (maxLength) {
