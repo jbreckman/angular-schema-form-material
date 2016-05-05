@@ -3,6 +3,7 @@
     .module('schemaForm')
     .config(materialDecoratorConfig)
     .directive('sfmExternalOptions', sfmExternalOptionsDirective)
+    .directive('mdEnterFix', mdEnterFixDirective)
     .filter('sfCamelKey', sfCamelKeyFilter);
 
   materialDecoratorConfig.$inject = [
@@ -232,6 +233,20 @@
 
     return enumTitleMap;
   };
+
+  function mdEnterFixDirective() {
+    return {
+      restrict: 'A',
+      link: function(scope, element, attrs) {
+        element.bind('keydown keypress', function(ev) {
+          if (ev.which === 13) {
+            ev.preventDefault();
+            $('md-virtual-repeat-container li.selected').simulate('click');
+          }
+        });
+      }
+    };
+  }
 
   sfmExternalOptionsDirective.$inject = [ '$http' ];
 

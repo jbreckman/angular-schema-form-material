@@ -26,7 +26,8 @@
     "angular": "1.5.5",
     "angular-material": "1.0.7",
     "angular-animate": "1.4",
-    "angular-sanitize": "1.4"
+    "angular-sanitize": "1.4",
+    "jquery-simulate": "^1.0.1"
   },
   "devDependencies": {
     "angular-ui-ace": "~0.2.3",
