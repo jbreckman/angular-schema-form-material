@@ -22,8 +22,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular-schema-form": ">=0.8.13",
-    "angular": "1.5.5",
+    "angular-schema-form": "1.0.0-alpha.4",
+    "angular": "1.6.4",
     "angular-material": "1.0.7",
     "angular-animate": "^1.6.4",
     "angular-sanitize": "1.4",
@@ -35,6 +35,6 @@
   },
   "resolutions": {
     "angular-material": "^1.0.7",
-    "angular": "^1.5.5"
+    "angular": "^1.6.4"
   }
 }
